@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Hardware | Grain Studio Catalog</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-dark text-white py-2 px-3 border-bottom border-secondary-subtle">
+    <div class="container d-flex justify-content-between align-items-center small">
+      <div>
+        <i class="bi bi-shield-check text-primary me-1"></i> 2-Year Official Studio Warranty on All Hardware
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-truck me-1"></i> Free Shipping on Orders $75+</span>
+        <span class="text-secondary">|</span>
+        <a href="contact.html" class="text-white text-decoration-none"><i class="bi bi-headset me-1"></i> Support 24/7</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+        <span>Grain <span class="text-primary">Studio</span></span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNovaContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNovaContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">All Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu shadow border-0 mt-2">
+              <li><a class="dropdown-item py-2" href="products.html?category=audio"><i class="bi bi-headphones me-2 text-primary"></i> Audio & Sound</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=wearables"><i class="bi bi-smartwatch me-2 text-primary"></i> Wearables</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=workstation"><i class="bi bi-laptop me-2 text-primary"></i> Smart Workstation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="cart.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 cart-btn-badge">
+            <i class="bi bi-bag me-1"></i> Cart
+            <span class="cart-count badge rounded-pill bg-danger" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hardware Catalog</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3 border-bottom pb-3">
+        <div>
+          <h1 class="h2 fw-bold mb-1">Grain Studio Hardware Catalog</h1>
+          <p class="text-muted small mb-0">Explore our complete collection of tactile acoustics and engineered workstation peripherals.</p>
+        </div>
+        <div class="text-muted small">
+          <span id="productCountBadge" class="fw-bold text-dark">Showing 8</span> items
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Sidebar Filters -->
+        <div class="col-lg-3">
+          <div class="card border-0 shadow-sm rounded-3 p-3 sticky-top" style="top: 90px; z-index: 10;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0"><i class="bi bi-sliders2 text-primary me-2"></i>Filters</h5>
+              <button class="btn btn-link btn-sm p-0 text-decoration-none text-muted" id="resetFiltersBtn">Reset All</button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mb-4">
+              <label class="form-label fw-bold small text-uppercase text-muted">Category</label>
+              <div class="form-check mb-2">
+                <input class="form-check-input category-radio" type="radio" name="categoryFilter" id="catAll" value="all" checked>
+                <label class="form-check-label" for="catAll">All Collections</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input category-radio" type="radio" name="categoryFilter" id="catAudio" value="audio">
+                <label class="form-check-label" for="catAudio">Audio & Sound (3)</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input category-radio" type="radio" name="categoryFilter" id="catWearables" value="wearables">
+                <label class="form-check-label" for="catWearables">Wearables & Health (2)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-radio" type="radio" name="categoryFilter" id="catWorkstation" value="workstation">
+                <label class="form-check-label" for="catWorkstation">Smart Workstation (3)</label>
+              </div>
+            </div>
+
+            <hr class="my-3 text-muted">
+
+            <!-- Max Price Filter -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <label for="priceRange" class="form-label fw-bold small text-uppercase text-muted mb-0">Max Price</label>
+                <span class="badge bg-primary-subtle text-primary fw-bold" id="priceDisplay">$300</span>
+              </div>
+              <input type="range" class="form-range" min="40" max="300" step="10" value="300" id="priceRange">
+              <div class="d-flex justify-content-between text-muted" style="font-size: 0.75rem;">
+                <span>$40</span>
+                <span>$300</span>
+              </div>
+            </div>
+
+            <hr class="my-3 text-muted">
+
+            <!-- Minimum Rating Filter -->
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-uppercase text-muted">Minimum Rating</label>
+              <select class="form-select form-select-sm" id="ratingFilter">
+                <option value="0">All Ratings</option>
+                <option value="4.7">4.7 Stars & Above</option>
+                <option value="4.8">4.8 Stars & Above</option>
+                <option value="4.9">4.9 Stars (Studio Choice)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Main Grid -->
+        <div class="col-lg-9">
+          <!-- Top Sorting & Search Bar -->
+          <div class="card border-0 shadow-sm rounded-3 p-3 mb-4">
+            <div class="row g-3 align-items-center">
+              <div class="col-md-7">
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                  <input type="text" class="form-control border-start-0 ps-0" id="searchInput" placeholder="Search by name, spec, or acoustic finish...">
+                </div>
+              </div>
+              <div class="col-md-5 d-flex align-items-center justify-content-md-end gap-2">
+                <label for="sortSelect" class="small text-muted text-nowrap mb-0">Sort By:</label>
+                <select class="form-select form-select-sm" id="sortSelect" style="max-width: 190px;">
+                  <option value="featured">Featured First</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name">Product Name (A-Z)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Cards Container -->
+          <div class="row" id="catalogProductsContainer">
+            <!-- Dynamic Cards Populated Here -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="noProductsFound" class="card border-0 shadow-sm p-5 text-center my-4" style="display: none;">
+            <div class="mb-3">
+              <i class="bi bi-funnel text-muted" style="font-size: 3.5rem;"></i>
+            </div>
+            <h4 class="fw-bold">No hardware matches your criteria</h4>
+            <p class="text-muted">Try adjusting your collection filter, clearing your search query, or raising the price ceiling.</p>
+            <div>
+              <button class="btn btn-primary btn-sm px-4" id="clearAllFiltersBtn">Clear All Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center">
+              <img id="quickViewImg" src="" alt="Product" class="img-fluid rounded-3" style="max-height: 280px; object-fit: contain;">
+            </div>
+            <div class="col-md-6">
+              <span id="quickViewCategory" class="badge bg-primary-subtle text-primary mb-2">Category</span>
+              <h4 id="quickViewTitle" class="fw-bold mb-2">Product Name</h4>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span id="quickViewPrice" class="fs-4 fw-bold text-dark">$0.00</span>
+                <span id="quickViewOriginalPrice" class="text-muted text-decoration-line-through small">$0.00</span>
+              </div>
+              <p id="quickViewDesc" class="text-muted small mb-3">Description</p>
+              <ul id="quickViewFeatures" class="list-unstyled small mb-4"></ul>
+              <div class="d-flex gap-2">
+                <button id="quickViewAddBtn" class="btn btn-primary flex-grow-1">
+                  <i class="bi bi-bag-plus me-1"></i> Add to Cart
+                </button>
+                <a id="quickViewFullLink" href="#" class="btn btn-outline-secondary">
+                  Full Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+            <span class="text-white">Grain <span class="text-primary">Studio</span></span>
+          </a>
+          <p class="small text-secondary mb-3">
+            Grain Studio designs tactile, acoustic, and high-performance lifestyle technology for creators, developers, and audio enthusiasts.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="products.html?category=audio">Audio & Sound</a></li>
+            <li><a href="products.html?category=wearables">Wearables</a></li>
+            <li><a href="products.html?category=workstation">Smart Workstation</a></li>
+            <li><a href="products.html">All Hardware</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Grain Studio</a></li>
+            <li><a href="contact.html">Customer Support</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout Flow</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5>Academic Project Info</h5>
+          <p class="small text-secondary mb-2">
+            <strong>Course:</strong> Value Added Course – 253VACPMC201 - Fundamentals of Website Development
+          </p>
+          <p class="small text-secondary mb-2">
+            <strong>Institution:</strong> Marian College Kuttikkanam (Autonomous), Peermade, Kerala – 685 531
+          </p>
+          <p class="small text-secondary mb-0">
+            <strong>Department:</strong> PG Department of Computer Applications (2026-2027)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center text-secondary">
+        <div>
+          &copy; 2026 Grain Studio E-Commerce Project. All rights reserved.
+        </div>
+        <div>
+          Developed with HTML5, CSS3 & Bootstrap 5
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Catalog Data & Main Logic -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Products Catalog Controller
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('catalogProductsContainer');
+      const countBadge = document.getElementById('productCountBadge');
+      const noFound = document.getElementById('noProductsFound');
+      const searchInput = document.getElementById('searchInput');
+      const sortSelect = document.getElementById('sortSelect');
+      const priceRange = document.getElementById('priceRange');
+      const priceDisplay = document.getElementById('priceDisplay');
+      const ratingFilter = document.getElementById('ratingFilter');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      const clearBtn = document.getElementById('clearAllFiltersBtn');
+
+      const params = new URLSearchParams(window.location.search);
+      const initialCat = params.get('category');
+      const initialSearch = params.get('search');
+
+      if (initialCat) {
+        const radio = document.querySelector(`input[name="categoryFilter"][value="${initialCat}"]`);
+        if (radio) radio.checked = true;
+      }
+      if (initialSearch) {
+        searchInput.value = initialSearch;
+      }
+
+      function filterAndRender() {
+        let products = getAllProducts();
+
+        const selectedRadio = document.querySelector('input[name="categoryFilter"]:checked');
+        const cat = selectedRadio ? selectedRadio.value : 'all';
+        if (cat !== 'all') {
+          products = products.filter(p => p.category === cat);
+        }
+
+        const maxPrice = parseFloat(priceRange.value);
+        priceDisplay.textContent = `$${maxPrice}`;
+        products = products.filter(p => p.price <= maxPrice);
+
+        const minRating = parseFloat(ratingFilter.value);
+        if (minRating > 0) {
+          products = products.filter(p => p.rating >= minRating);
+        }
+
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+          products = products.filter(p => 
+            p.name.toLowerCase().includes(query) ||
+            p.description.toLowerCase().includes(query) ||
+            p.categoryName.toLowerCase().includes(query)
+          );
+        }
+
+        const sortVal = sortSelect.value;
+        if (sortVal === 'price-low') {
+          products.sort((a, b) => a.price - b.price);
+        } else if (sortVal === 'price-high') {
+          products.sort((a, b) => b.price - a.price);
+        } else if (sortVal === 'rating') {
+          products.sort((a, b) => b.rating - a.rating);
+        } else if (sortVal === 'name') {
+          products.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        if (products.length === 0) {
+          container.innerHTML = '';
+          noFound.style.display = 'block';
+          countBadge.textContent = 'Showing 0';
+        } else {
+          noFound.style.display = 'none';
+          countBadge.textContent = `Showing ${products.length}`;
+          container.innerHTML = products.map(p => {
+            const cardHtml = createProductCardHtml(p);
+            return cardHtml.replace('col-lg-3', 'col-lg-4');
+          }).join('');
+        }
+      }
+
+      document.querySelectorAll('.category-radio').forEach(r => r.addEventListener('change', filterAndRender));
+      priceRange.addEventListener('input', filterAndRender);
+      ratingFilter.addEventListener('change', filterAndRender);
+      searchInput.addEventListener('input', filterAndRender);
+      sortSelect.addEventListener('change', filterAndRender);
+
+      function resetAll() {
+        document.getElementById('catAll').checked = true;
+        priceRange.value = 300;
+        ratingFilter.value = 0;
+        searchInput.value = '';
+        sortSelect.value = 'featured';
+        filterAndRender();
+      }
+
+      resetBtn.addEventListener('click', resetAll);
+      clearBtn.addEventListener('click', resetAll);
+
+      filterAndRender();
+    });
+  </script>
+</body>
+</html>

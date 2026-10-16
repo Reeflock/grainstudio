@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | Grain Studio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-dark text-white py-2 px-3 border-bottom border-secondary-subtle">
+    <div class="container d-flex justify-content-between align-items-center small">
+      <div>
+        <i class="bi bi-shield-check text-primary me-1"></i> 2-Year Official Studio Warranty on All Hardware
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-truck me-1"></i> Free Shipping on Orders $75+</span>
+        <span class="text-secondary">|</span>
+        <a href="contact.html" class="text-white text-decoration-none"><i class="bi bi-headset me-1"></i> Support 24/7</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+        <span>Grain <span class="text-primary">Studio</span></span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNovaContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNovaContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">All Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu shadow border-0 mt-2">
+              <li><a class="dropdown-item py-2" href="products.html?category=audio"><i class="bi bi-headphones me-2 text-primary"></i> Audio & Sound</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=wearables"><i class="bi bi-smartwatch me-2 text-primary"></i> Wearables</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=workstation"><i class="bi bi-laptop me-2 text-primary"></i> Smart Workstation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="cart.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 cart-btn-badge">
+            <i class="bi bi-bag me-1"></i> Cart
+            <span class="cart-count badge rounded-pill bg-danger" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="cart.html" class="text-decoration-none">Shopping Bag</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+
+      <h1 class="h2 fw-bold mb-4">Express Studio Checkout</h1>
+
+      <div class="row g-4">
+        <!-- Checkout Form Column -->
+        <div class="col-lg-8">
+          <form id="checkoutForm" class="needs-validation" novalidate>
+            
+            <!-- Step 1: Customer Contact -->
+            <div class="checkout-card">
+              <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                <span class="badge bg-primary rounded-circle">1</span>
+                Contact Information
+              </h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label small fw-bold">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="e.g. Rahul" required>
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label small fw-bold">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="e.g. Sharma" required>
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label small fw-bold">Email Address</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                  <div class="invalid-feedback">Valid email required for studio order dispatch.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label small fw-bold">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+91 98765 43210" required>
+                  <div class="invalid-feedback">Phone number required for courier coordination.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Shipping Address -->
+            <div class="checkout-card">
+              <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                <span class="badge bg-primary rounded-circle">2</span>
+                Shipping Address
+              </h5>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="address" class="form-label small fw-bold">Street Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="Studio/Flat No., Street Name, Area" required>
+                  <div class="invalid-feedback">Please enter your shipping address.</div>
+                </div>
+                <div class="col-md-5">
+                  <label for="city" class="form-label small fw-bold">City / Town</label>
+                  <input type="text" class="form-control" id="city" placeholder="e.g. Peermade / Kottayam" required>
+                  <div class="invalid-feedback">City is required.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="state" class="form-label small fw-bold">State / Province</label>
+                  <select class="form-select" id="state" required>
+                    <option value="">Select State</option>
+                    <option value="Kerala" selected>Kerala</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a state.</div>
+                </div>
+                <div class="col-md-3">
+                  <label for="zip" class="form-label small fw-bold">PIN / ZIP Code</label>
+                  <input type="text" class="form-control" id="zip" placeholder="685531" required>
+                  <div class="invalid-feedback">Valid postal PIN code required.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment Options -->
+            <div class="checkout-card">
+              <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                <span class="badge bg-primary rounded-circle">3</span>
+                Payment Method
+              </h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <div class="payment-method-card active" id="payCardOption">
+                    <input class="form-check-input mt-0" type="radio" name="paymentMethod" id="payCard" value="card" checked>
+                    <label class="form-check-label fw-bold mb-0" for="payCard">
+                      <i class="bi bi-credit-card-2-front text-primary me-1"></i> Credit / Debit
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="payment-method-card" id="payUpiOption">
+                    <input class="form-check-input mt-0" type="radio" name="paymentMethod" id="payUpi" value="upi">
+                    <label class="form-check-label fw-bold mb-0" for="payUpi">
+                      <i class="bi bi-qr-code-scan text-success me-1"></i> UPI / QR Code
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="payment-method-card" id="payCodOption">
+                    <input class="form-check-input mt-0" type="radio" name="paymentMethod" id="payCod" value="cod">
+                    <label class="form-check-label fw-bold mb-0" for="payCod">
+                      <i class="bi bi-cash-stack text-warning me-1"></i> Cash on Delivery
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Details Block -->
+              <div id="cardDetailsBlock">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="ccName" class="form-label small fw-bold">Name on Card</label>
+                    <input type="text" class="form-control" id="ccName" placeholder="Full name as printed on card">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="ccNumber" class="form-label small fw-bold">Card Number</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="ccNumber" placeholder="4111 2222 3333 4444" maxlength="19">
+                      <span class="input-group-text bg-white"><i class="bi bi-credit-card"></i></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="ccExp" class="form-label small fw-bold">Expiration Date</label>
+                    <input type="text" class="form-control" id="ccExp" placeholder="MM/YY" maxlength="5">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="ccCvv" class="form-label small fw-bold">CVV Security Code</label>
+                    <input type="password" class="form-control" id="ccCvv" placeholder="123" maxlength="4">
+                  </div>
+                </div>
+              </div>
+
+              <!-- UPI Details Block -->
+              <div id="upiDetailsBlock" style="display: none;">
+                <div class="alert alert-info py-2 small mb-3">
+                  <i class="bi bi-info-circle me-1"></i> Enter your Virtual Payment Address (e.g., yourname@okhdfcbank or @upi).
+                </div>
+                <div class="mb-3">
+                  <label for="upiId" class="form-label small fw-bold">UPI ID</label>
+                  <input type="text" class="form-control" id="upiId" placeholder="user@upi">
+                </div>
+              </div>
+
+              <!-- COD Details Block -->
+              <div id="codDetailsBlock" style="display: none;">
+                <div class="alert alert-warning py-2 small mb-0">
+                  <i class="bi bi-cash me-1"></i> Pay with cash upon package receipt. A verification OTP will be sent to your phone number at time of delivery.
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-primary btn-lg w-100 shadow py-3 fw-bold" type="submit" id="placeOrderBtn">
+              <i class="bi bi-shield-check me-2"></i> Confirm & Place Order
+            </button>
+          </form>
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <div class="col-lg-4">
+          <div class="order-summary-card sticky-top" style="top: 90px;">
+            <h5 class="fw-bold mb-3">Order Items (<span id="checkoutItemCount">0</span>)</h5>
+            
+            <div id="checkoutItemsList" class="mb-3" style="max-height: 260px; overflow-y: auto;">
+              <!-- Mini items list -->
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Subtotal</span>
+              <span class="fw-bold text-dark" id="checkoutSubtotal">$0.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Estimated Tax (8%)</span>
+              <span class="fw-semibold text-dark" id="checkoutTax">$0.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Shipping</span>
+              <span class="fw-semibold text-success">Free Standard</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 text-success fw-semibold" id="checkoutDiscountRow" style="display: none !important;">
+              <span>Promo Discount (10%)</span>
+              <span id="checkoutDiscount">-$0.00</span>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fs-5 fw-bold text-dark">Total Due</span>
+              <span class="fs-4 fw-bold text-primary" id="checkoutTotal">$0.00</span>
+            </div>
+
+            <div class="bg-light p-3 rounded-3 small text-muted">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="bi bi-shield-lock-fill text-primary"></i>
+                <span class="fw-semibold text-dark">PCI-DSS Compliant</span>
+              </div>
+              Your sensitive financial details are tokenized and never stored on local servers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Order Success Modal -->
+  <div class="modal fade" id="orderSuccessModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg text-center p-4">
+        <div class="modal-body">
+          <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; font-size: 2.2rem;">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <h3 class="fw-bold mb-2">Order Confirmed!</h3>
+          <p class="text-muted small mb-4">
+            Thank you for purchasing with Grain Studio. Your hardware is being prepared and boxed for express dispatch.
+          </p>
+
+          <div class="bg-light rounded-3 p-3 text-start mb-4 small">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Order ID:</span>
+              <strong id="modalOrderId" class="text-primary">GS-2026-98124</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Estimated Delivery:</span>
+              <strong id="modalDeliveryDate">Oct 19, 2026</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Total Charged:</span>
+              <strong id="modalTotalPaid">$0.00</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">Confirmation Sent:</span>
+              <span id="modalEmailSent">user@example.com</span>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+            <a href="products.html" class="btn btn-outline-secondary">Explore More Hardware</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+            <span class="text-white">Grain <span class="text-primary">Studio</span></span>
+          </a>
+          <p class="small text-secondary mb-3">
+            Grain Studio designs tactile, acoustic, and high-performance lifestyle technology for creators, developers, and audio enthusiasts.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="products.html?category=audio">Audio & Sound</a></li>
+            <li><a href="products.html?category=wearables">Wearables</a></li>
+            <li><a href="products.html?category=workstation">Smart Workstation</a></li>
+            <li><a href="products.html">All Hardware</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Grain Studio</a></li>
+            <li><a href="contact.html">Customer Support</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout Flow</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5>Academic Project Info</h5>
+          <p class="small text-secondary mb-2">
+            <strong>Course:</strong> Value Added Course – 253VACPMC201 - Fundamentals of Website Development
+          </p>
+          <p class="small text-secondary mb-2">
+            <strong>Institution:</strong> Marian College Kuttikkanam (Autonomous), Peermade, Kerala – 685 531
+          </p>
+          <p class="small text-secondary mb-0">
+            <strong>Department:</strong> PG Department of Computer Applications (2026-2027)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center text-secondary">
+        <div>
+          &copy; 2026 Grain Studio E-Commerce Project. All rights reserved.
+        </div>
+        <div>
+          Developed with HTML5, CSS3 & Bootstrap 5
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Catalog Data & Main Logic -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Checkout Controller
+    document.addEventListener('DOMContentLoaded', () => {
+      let cart = getCart();
+
+      if (cart.length === 0) {
+        addToCart(1, 1, 'Space Gray');
+        cart = getCart();
+      }
+
+      const itemsList = document.getElementById('checkoutItemsList');
+      const countEl = document.getElementById('checkoutItemCount');
+      const subtotalEl = document.getElementById('checkoutSubtotal');
+      const taxEl = document.getElementById('checkoutTax');
+      const totalEl = document.getElementById('checkoutTotal');
+      const discountRow = document.getElementById('checkoutDiscountRow');
+      const discountEl = document.getElementById('checkoutDiscount');
+
+      countEl.textContent = getCartCount();
+
+      itemsList.innerHTML = cart.map(item => `
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="${item.image}" alt="${item.name}" class="rounded border" style="width: 48px; height: 48px; object-fit: cover;">
+          <div class="flex-grow-1 overflow-hidden">
+            <h6 class="mb-0 small fw-bold text-truncate">${item.name}</h6>
+            <small class="text-muted">${item.color} &times; ${item.quantity}</small>
+          </div>
+          <span class="small fw-bold text-dark">$${(item.price * item.quantity).toFixed(2)}</span>
+        </div>
+      `).join('');
+
+      const subtotal = getCartSubtotal();
+      const tax = subtotal * 0.08;
+      let discountRate = localStorage.getItem(APPLIED_PROMO_KEY) === 'GRAIN10' ? 0.10 : 0;
+      let discount = subtotal * discountRate;
+
+      subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      taxEl.textContent = `$${tax.toFixed(2)}`;
+
+      if (discountRate > 0) {
+        discountRow.style.setProperty('display', 'flex', 'important');
+        discountEl.textContent = `-$${discount.toFixed(2)}`;
+      }
+
+      const grandTotal = subtotal - discount + tax;
+      totalEl.textContent = `$${grandTotal.toFixed(2)}`;
+
+      const payCardOpt = document.getElementById('payCardOption');
+      const payUpiOpt = document.getElementById('payUpiOption');
+      const payCodOpt = document.getElementById('payCodOption');
+      const cardDetails = document.getElementById('cardDetailsBlock');
+      const upiDetails = document.getElementById('upiDetailsBlock');
+      const codDetails = document.getElementById('codDetailsBlock');
+
+      function switchPayment(method) {
+        payCardOpt.classList.remove('active');
+        payUpiOpt.classList.remove('active');
+        payCodOpt.classList.remove('active');
+        cardDetails.style.display = 'none';
+        upiDetails.style.display = 'none';
+        codDetails.style.display = 'none';
+
+        if (method === 'card') {
+          payCardOpt.classList.add('active');
+          cardDetails.style.display = 'block';
+        } else if (method === 'upi') {
+          payUpiOpt.classList.add('active');
+          upiDetails.style.display = 'block';
+        } else {
+          payCodOpt.classList.add('active');
+          codDetails.style.display = 'block';
+        }
+      }
+
+      payCardOpt.addEventListener('click', () => { document.getElementById('payCard').checked = true; switchPayment('card'); });
+      payUpiOpt.addEventListener('click', () => { document.getElementById('payUpi').checked = true; switchPayment('upi'); });
+      payCodOpt.addEventListener('click', () => { document.getElementById('payCod').checked = true; switchPayment('cod'); });
+
+      const form = document.getElementById('checkoutForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+
+        form.classList.add('was-validated');
+
+        const orderId = 'GS-2026-' + Math.floor(10000 + Math.random() * 90000);
+        const email = document.getElementById('email').value;
+
+        const d = new Date();
+        d.setDate(d.getDate() + 3);
+        const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+        document.getElementById('modalOrderId').textContent = orderId;
+        document.getElementById('modalDeliveryDate').textContent = dateStr;
+        document.getElementById('modalTotalPaid').textContent = `$${grandTotal.toFixed(2)}`;
+        document.getElementById('modalEmailSent').textContent = email;
+
+        clearCart();
+
+        const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+        successModal.show();
+      });
+    });
+  </script>
+</body>
+</html>

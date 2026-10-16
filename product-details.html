@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Details | Grain Studio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-dark text-white py-2 px-3 border-bottom border-secondary-subtle">
+    <div class="container d-flex justify-content-between align-items-center small">
+      <div>
+        <i class="bi bi-shield-check text-primary me-1"></i> 2-Year Official Studio Warranty on All Hardware
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-truck me-1"></i> Free Shipping on Orders $75+</span>
+        <span class="text-secondary">|</span>
+        <a href="contact.html" class="text-white text-decoration-none"><i class="bi bi-headset me-1"></i> Support 24/7</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+        <span>Grain <span class="text-primary">Studio</span></span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNovaContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNovaContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">All Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu shadow border-0 mt-2">
+              <li><a class="dropdown-item py-2" href="products.html?category=audio"><i class="bi bi-headphones me-2 text-primary"></i> Audio & Sound</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=wearables"><i class="bi bi-smartwatch me-2 text-primary"></i> Wearables</a></li>
+              <li><a class="dropdown-item py-2" href="products.html?category=workstation"><i class="bi bi-laptop me-2 text-primary"></i> Smart Workstation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="cart.html" class="btn btn-outline-primary btn-sm rounded-pill px-3 cart-btn-badge">
+            <i class="bi bi-bag me-1"></i> Cart
+            <span class="cart-count badge rounded-pill bg-danger" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html" class="text-decoration-none">Hardware</a></li>
+          <li class="breadcrumb-item active" id="breadcrumbCurrent">Product Details</li>
+        </ol>
+      </nav>
+
+      <!-- Main Product View -->
+      <div class="row g-5 mb-5">
+        <!-- Product Image Showcase -->
+        <div class="col-lg-6">
+          <div class="product-gallery-main mb-3">
+            <img id="detailMainImg" src="" alt="Product Showcase" class="img-fluid rounded-3">
+          </div>
+          <div class="product-thumb-grid justify-content-center" id="detailThumbGrid">
+            <!-- Thumbs generated here -->
+          </div>
+        </div>
+
+        <!-- Product Information & Actions -->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span id="detailBadge" class="badge bg-primary">Bestseller</span>
+            <span id="detailCategory" class="badge bg-secondary-subtle text-secondary">Audio</span>
+            <span class="badge bg-success-subtle text-success"><i class="bi bi-check2-circle me-1"></i>In Stock</span>
+          </div>
+
+          <h1 id="detailTitle" class="display-6 fw-bold mb-2">Product Name</h1>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rating-stars text-warning fs-6" id="detailStars">
+              <!-- Stars -->
+            </div>
+            <span class="text-muted small" id="detailReviewCount">(238 reviews)</span>
+            <span class="text-muted small">|</span>
+            <span class="text-primary small fw-semibold"><i class="bi bi-shield-check me-1"></i>Verified Hardware</span>
+          </div>
+
+          <!-- Price Block -->
+          <div class="d-flex align-items-baseline gap-3 mb-3 p-3 bg-light rounded-3">
+            <span id="detailPrice" class="display-6 fw-bold text-dark">$0.00</span>
+            <span id="detailOriginalPrice" class="fs-5 text-muted text-decoration-line-through">$0.00</span>
+            <span id="detailDiscount" class="badge bg-danger-subtle text-danger fs-6 fw-bold">20% OFF</span>
+          </div>
+
+          <p id="detailShortDesc" class="text-muted mb-4 lead fs-6">
+            Product short summary description.
+          </p>
+
+          <!-- Color Selector -->
+          <div class="mb-4">
+            <label class="form-label fw-bold small text-uppercase text-muted">Available Finishes</label>
+            <div class="d-flex gap-2" id="detailColorOptions">
+              <!-- Color options -->
+            </div>
+          </div>
+
+          <!-- Quantity Stepper & Add to Cart -->
+          <div class="row g-3 align-items-center mb-4">
+            <div class="col-auto">
+              <label class="form-label fw-bold small text-uppercase text-muted d-block">Quantity</label>
+              <div class="quantity-control">
+                <button type="button" class="quantity-btn" id="qtyMinus"><i class="bi bi-dash"></i></button>
+                <input type="text" class="quantity-input" id="qtyInput" value="1" readonly>
+                <button type="button" class="quantity-btn" id="qtyPlus"><i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+            <div class="col">
+              <label class="form-label d-none d-md-block">&nbsp;</label>
+              <button class="btn btn-primary btn-lg w-100 shadow-sm" id="detailAddToCartBtn">
+                <i class="bi bi-bag-plus me-2"></i> Add to Cart
+              </button>
+            </div>
+            <div class="col-12 col-sm-auto">
+              <label class="form-label d-none d-md-block">&nbsp;</label>
+              <button class="btn btn-outline-dark btn-lg w-100" id="detailBuyNowBtn">
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Value Prop Guarantees -->
+          <div class="card border-0 bg-light rounded-3 p-3 small">
+            <div class="row g-2 text-muted">
+              <div class="col-6">
+                <i class="bi bi-truck text-primary me-2"></i> Free Express Shipping
+              </div>
+              <div class="col-6">
+                <i class="bi bi-arrow-repeat text-primary me-2"></i> 30-Day Risk-Free Returns
+              </div>
+              <div class="col-6">
+                <i class="bi bi-shield-check text-primary me-2"></i> 2-Year Studio Warranty
+              </div>
+              <div class="col-6">
+                <i class="bi bi-patch-check text-primary me-2"></i> 100% Authentic Hardware
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabbed Specifications & Reviews -->
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-5">
+        <ul class="nav nav-tabs nav-fill mb-4" id="productTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active fw-bold py-3" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Overview & Highlights</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bold py-3" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab">Technical Specifications</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bold py-3" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Customer Reviews</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bold py-3" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">Shipping & Warranty</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="productTabContent">
+          <!-- Overview -->
+          <div class="tab-pane fade show active p-2" id="overview" role="tabpanel">
+            <h5 class="fw-bold mb-3">Architectural Precision & Acoustic Honesty</h5>
+            <p id="detailFullDesc" class="text-muted leading-relaxed mb-4">Detailed description here.</p>
+            <h6 class="fw-bold mb-3">Key Features & Engineering Highlights</h6>
+            <ul id="detailFeaturesList" class="list-unstyled mb-0 row g-3">
+              <!-- Features populated dynamically -->
+            </ul>
+          </div>
+
+          <!-- Specs -->
+          <div class="tab-pane fade p-2" id="specs" role="tabpanel">
+            <h5 class="fw-bold mb-3">Detailed Technical Specifications</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle mb-0" id="detailSpecsTable">
+                <tbody>
+                  <!-- Specs populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Reviews -->
+          <div class="tab-pane fade p-2" id="reviews" role="tabpanel">
+            <div class="row g-4 align-items-center mb-4">
+              <div class="col-md-4 text-center border-end">
+                <h1 class="display-3 fw-bold text-dark mb-0" id="detailAvgRating">4.9</h1>
+                <div class="text-warning fs-5 mb-1">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="text-muted small">Based on 200+ verified customer reviews</span>
+              </div>
+              <div class="col-md-8">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="small text-muted" style="width: 45px;">5 Star</span>
+                  <div class="progress flex-grow-1" style="height: 8px;">
+                    <div class="progress-bar bg-warning" style="width: 88%;"></div>
+                  </div>
+                  <span class="small text-muted" style="width: 35px;">88%</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="small text-muted" style="width: 45px;">4 Star</span>
+                  <div class="progress flex-grow-1" style="height: 8px;">
+                    <div class="progress-bar bg-warning" style="width: 10%;"></div>
+                  </div>
+                  <span class="small text-muted" style="width: 35px;">10%</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="small text-muted" style="width: 45px;">3 Star</span>
+                  <div class="progress flex-grow-1" style="height: 8px;">
+                    <div class="progress-bar bg-warning" style="width: 2%;"></div>
+                  </div>
+                  <span class="small text-muted" style="width: 35px;">2%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Customer Reviews List -->
+            <div class="border-top pt-4">
+              <div class="card bg-light border-0 p-3 mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="fw-bold mb-0">Vikram S. <i class="bi bi-patch-check-fill text-primary small"></i></h6>
+                  <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                </div>
+                <p class="small text-muted mb-0">"Phenomenal build quality! Feels like hardware that costs double the price. The acoustic texture and battery performance are extraordinary."</p>
+              </div>
+              <div class="card bg-light border-0 p-3 mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="fw-bold mb-0">Ananya R. <i class="bi bi-patch-check-fill text-primary small"></i></h6>
+                  <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                </div>
+                <p class="small text-muted mb-0">"The ergonomics and companion app are seamless. Arrived in Kochi within 48 hours of placing the order."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping -->
+          <div class="tab-pane fade p-2" id="shipping" role="tabpanel">
+            <h5 class="fw-bold mb-3">Shipping Guidelines & Warranty Protection</h5>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h6 class="fw-bold text-primary"><i class="bi bi-box-seam me-2"></i>Shipping Logistics</h6>
+                <p class="small text-muted">
+                  Orders placed before 2:00 PM IST ship the same business day. All packages are insured and dispatched with real-time GPS tracking via top express logistics partners.
+                </p>
+                <ul class="small text-muted ps-3">
+                  <li>Standard Ground: 2-4 business days (Free over $75)</li>
+                  <li>Express Air: Next business day ($15 flat rate)</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h6 class="fw-bold text-primary"><i class="bi bi-shield-check me-2"></i>Official Studio Warranty</h6>
+                <p class="small text-muted">
+                  Every Grain Studio product comes backed by our comprehensive 2-Year Limited Manufacturer Warranty covering internal hardware defects, battery degradation below 80%, and firmware stability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="border-top pt-5">
+        <h3 class="fw-bold mb-4">You May Also Like</h3>
+        <div class="row" id="relatedProductsContainer">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center">
+              <img id="quickViewImg" src="" alt="Product" class="img-fluid rounded-3" style="max-height: 280px; object-fit: contain;">
+            </div>
+            <div class="col-md-6">
+              <span id="quickViewCategory" class="badge bg-primary-subtle text-primary mb-2">Category</span>
+              <h4 id="quickViewTitle" class="fw-bold mb-2">Product Name</h4>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span id="quickViewPrice" class="fs-4 fw-bold text-dark">$0.00</span>
+                <span id="quickViewOriginalPrice" class="text-muted text-decoration-line-through small">$0.00</span>
+              </div>
+              <p id="quickViewDesc" class="text-muted small mb-3">Description</p>
+              <ul id="quickViewFeatures" class="list-unstyled small mb-4"></ul>
+              <div class="d-flex gap-2">
+                <button id="quickViewAddBtn" class="btn btn-primary flex-grow-1">
+                  <i class="bi bi-bag-plus me-1"></i> Add to Cart
+                </button>
+                <a id="quickViewFullLink" href="#" class="btn btn-outline-secondary">
+                  Full Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <span class="brand-icon"><i class="bi bi-soundwave"></i></span>
+            <span class="text-white">Grain <span class="text-primary">Studio</span></span>
+          </a>
+          <p class="small text-secondary mb-3">
+            Grain Studio designs tactile, acoustic, and high-performance lifestyle technology for creators, developers, and audio enthusiasts.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="products.html?category=audio">Audio & Sound</a></li>
+            <li><a href="products.html?category=wearables">Wearables</a></li>
+            <li><a href="products.html?category=workstation">Smart Workstation</a></li>
+            <li><a href="products.html">All Hardware</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Grain Studio</a></li>
+            <li><a href="contact.html">Customer Support</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout Flow</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5>Academic Project Info</h5>
+          <p class="small text-secondary mb-2">
+            <strong>Course:</strong> Value Added Course – 253VACPMC201 - Fundamentals of Website Development
+          </p>
+          <p class="small text-secondary mb-2">
+            <strong>Institution:</strong> Marian College Kuttikkanam (Autonomous), Peermade, Kerala – 685 531
+          </p>
+          <p class="small text-secondary mb-0">
+            <strong>Department:</strong> PG Department of Computer Applications (2026-2027)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center text-secondary">
+        <div>
+          &copy; 2026 Grain Studio E-Commerce Project. All rights reserved.
+        </div>
+        <div>
+          Developed with HTML5, CSS3 & Bootstrap 5
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Catalog Data & Main Logic -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Product Details Controller
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      let prodId = parseInt(params.get('id')) || 1;
+      let product = getProductById(prodId) || getProductById(1);
+
+      document.title = `${product.name} | Grain Studio`;
+      document.getElementById('breadcrumbCurrent').textContent = product.name;
+      document.getElementById('detailMainImg').src = product.image;
+      document.getElementById('detailBadge').textContent = product.badge;
+      document.getElementById('detailBadge').className = `badge bg-${product.badgeColor}`;
+      document.getElementById('detailCategory').textContent = product.categoryName;
+      document.getElementById('detailTitle').textContent = product.name;
+      document.getElementById('detailPrice').textContent = `$${product.price.toFixed(2)}`;
+      document.getElementById('detailOriginalPrice').textContent = `$${product.originalPrice.toFixed(2)}`;
+      document.getElementById('detailDiscount').textContent = `${Math.round((1 - product.price / product.originalPrice) * 100)}% OFF`;
+      document.getElementById('detailShortDesc').textContent = product.description;
+      document.getElementById('detailFullDesc').textContent = product.fullDescription;
+      document.getElementById('detailAvgRating').textContent = product.rating.toFixed(1);
+      document.getElementById('detailReviewCount').textContent = `(${product.reviewCount} customer reviews)`;
+
+      const stars = Array(5).fill(0).map((_, i) => {
+        if (i < Math.floor(product.rating)) return '<i class="bi bi-star-fill"></i>';
+        if (i < product.rating) return '<i class="bi bi-star-half"></i>';
+        return '<i class="bi bi-star"></i>';
+      }).join('');
+      document.getElementById('detailStars').innerHTML = stars;
+
+      const colorContainer = document.getElementById('detailColorOptions');
+      let selectedColor = product.colors ? product.colors[0] : 'Default';
+      if (product.colors && product.colors.length > 0) {
+        colorContainer.innerHTML = product.colors.map((c, i) => `
+          <button type="button" class="btn btn-sm ${i === 0 ? 'btn-dark' : 'btn-outline-secondary'} color-pill" data-color="${c}">
+            ${c}
+          </button>
+        `).join('');
+
+        colorContainer.querySelectorAll('.color-pill').forEach(btn => {
+          btn.addEventListener('click', () => {
+            colorContainer.querySelectorAll('.color-pill').forEach(b => {
+              b.classList.remove('btn-dark');
+              b.classList.add('btn-outline-secondary');
+            });
+            btn.classList.remove('btn-outline-secondary');
+            btn.classList.add('btn-dark');
+            selectedColor = btn.getAttribute('data-color');
+          });
+        });
+      }
+
+      const thumbGrid = document.getElementById('detailThumbGrid');
+      thumbGrid.innerHTML = `
+        <div class="product-thumb active"><img src="${product.image}" alt="View 1"></div>
+        <div class="product-thumb"><img src="${product.image}" alt="View 2" style="filter: brightness(0.95);"></div>
+        <div class="product-thumb"><img src="${product.image}" alt="View 3" style="filter: contrast(1.1);"></div>
+      `;
+      thumbGrid.querySelectorAll('.product-thumb').forEach(th => {
+        th.addEventListener('click', () => {
+          thumbGrid.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+          th.classList.add('active');
+        });
+      });
+
+      const qtyInput = document.getElementById('qtyInput');
+      document.getElementById('qtyMinus').addEventListener('click', () => {
+        let val = parseInt(qtyInput.value) || 1;
+        if (val > 1) qtyInput.value = val - 1;
+      });
+      document.getElementById('qtyPlus').addEventListener('click', () => {
+        let val = parseInt(qtyInput.value) || 1;
+        if (val < 10) qtyInput.value = val + 1;
+      });
+
+      document.getElementById('detailAddToCartBtn').addEventListener('click', () => {
+        const qty = parseInt(qtyInput.value) || 1;
+        addToCart(product.id, qty, selectedColor);
+      });
+
+      document.getElementById('detailBuyNowBtn').addEventListener('click', () => {
+        const qty = parseInt(qtyInput.value) || 1;
+        addToCart(product.id, qty, selectedColor);
+        window.location.href = 'checkout.html';
+      });
+
+      const featList = document.getElementById('detailFeaturesList');
+      featList.innerHTML = product.features.map(f => `
+        <li class="col-md-6 d-flex align-items-start gap-2">
+          <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+          <span>${f}</span>
+        </li>
+      `).join('');
+
+      const specsTable = document.querySelector('#detailSpecsTable tbody');
+      specsTable.innerHTML = Object.entries(product.specs).map(([key, val]) => `
+        <tr>
+          <th style="width: 35%; background-color: #f8fafc;">${key}</th>
+          <td>${val}</td>
+        </tr>
+      `).join('');
+
+      const relContainer = document.getElementById('relatedProductsContainer');
+      const related = getAllProducts().filter(p => p.id !== product.id).slice(0, 4);
+      relContainer.innerHTML = related.map(p => createProductCardHtml(p)).join('');
+    });
+  </script>
+</body>
+</html>
