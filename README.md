@@ -1,61 +1,88 @@
-# Grain Studio - Tactile Hardware & Acoustic E-Commerce Platform
+# Grain Studio
 
-### Value Added Course – 253VACPMC201: Fundamentals of Website Development
-**Institution:** Marian College Kuttikkanam (Autonomous), Peermade, Kerala – 685 531  
-**Department:** PG Department of Computer Applications  
-**Academic Year:** 2026 – 2027  
+Grain Studio is a responsive, multi-page e‑commerce front-end showcasing boutique tactile electronics and studio audio hardware. This repository contains a small static website built with HTML5, CSS3 and Bootstrap 5.3 and a bit of lightweight vanilla JavaScript to handle product data and client-side cart interactions.
 
----
-
-## 🚀 Project Overview
-**Grain Studio** is an upscale, responsive, multi-page E-Commerce platform built exclusively using **HTML5, CSS3, and Bootstrap 5.3**, complemented by lightweight Vanilla JavaScript for interactive cart persistence and UI behaviors.
-
-The website represents a boutique tactile electronics and studio audio hardware brand showcasing 8 products across 3 distinct categories with a seamless shopping experience from discovery to checkout.
+This project was created as a course assignment and also works as a compact demo storefront you can run locally or host as static files.
 
 ---
 
-## 📁 Project Directory Structure
+## Live preview
+
+Open index.html in a browser or serve the site locally (instructions below). There is no server-side backend — all product data and cart state are handled in the client.
+
+---
+
+## Features
+
+- 7 pages: Home, Products (catalog), Product Details, Cart, Checkout, About, Contact
+- Client-side product catalog (products-data.js) with 8 sample products in 3 categories
+- Search, category filtering, price sorting on the Products page
+- Product gallery, specifications and reviews on the Product Details page
+- Cart state persisted to localStorage with quantity steppers, coupon placeholder and subtotal calculation
+- Responsive layout using Bootstrap 5.3 (mobile → desktop)
+- Accessible and semantic HTML structure where practical
+
+---
+
+## Project structure
+
 ```
-busy-pythagoras/
-├── index.html                    # 1. Home Page (Hero, Categories, Featured Hardware, Testimonials)
-├── products.html                 # 2. Hardware Catalog (Live Search, Category & Price Filters, Sorting)
-├── product-details.html          # 3. Product Details (Gallery, Steppers, Spec Tables, Review Tabs)
-├── cart.html                     # 4. Shopping Cart (Dynamic Table, Steppers, Coupon System, Subtotal)
-├── checkout.html                 # 5. Checkout Flow (Multi-step Form, Payment Methods, Order Confirmation)
-├── about.html                    # 6. About Us Page (Mission, Guiding Pillars, Metric Counters, Team)
-├── contact.html                  # 7. Contact Us Page (Contact Cards, Interactive Form, FAQ, Campus Map)
+grainstudio/
+├── index.html
+├── products.html
+├── product-details.html
+├── cart.html
+├── checkout.html
+├── about.html
+├── contact.html
 ├── assets/
 │   ├── css/
-│   │   └── style.css             # Custom CSS customizing Bootstrap components & modern typography
+│   │   └── style.css
 │   ├── js/
-│   │   ├── products-data.js      # Centralized product catalog data source (8 products)
-│   │   └── main.js               # Cart state management (localStorage), Toasts, Modals
-│   ├── images/                   # High-resolution product photos, banners & Marian College logo
-│   └── screenshots/              # Captured high-definition page screenshots for the Project Report
+│   │   ├── products-data.js
+│   │   └── main.js
+│   ├── images/
+│   └── screenshots/
 └── README.md
 ```
 
 ---
 
-## 🌟 Key Features & Requirements Met
+## How to run locally
 
-| Requirement | Implementation Detail | Status |
-| :--- | :--- | :---: |
-| **Technologies** | Built using HTML5, modern CSS3, and Bootstrap 5.3 (no heavy external frontend frameworks) | ✅ Complete |
-| **Minimum 6 Products** | 8 rich products with pricing, ratings, variants, and complete technical specifications | ✅ Complete (8 Products) |
-| **Minimum 3 Categories** | 1. Audio & Sound, 2. Wearables & Health, 3. Smart Workstation | ✅ Complete (3 Categories) |
-| **Minimum 6 Pages** | 7 fully functional pages: Home, Products, Product Details, Cart, Checkout, About Us, Contact Us | ✅ Complete (7 Pages) |
-| **All Navigation Links** | Unified navbar & footer with working links, active page states, and dropdown menus | ✅ Complete |
-| **Fully Responsive** | Optimized using Bootstrap grid & flexbox across mobile (390px), tablet, and desktop (1280px+) | ✅ Complete |
-| **Component Customization** | Customized color palette, buttons, cards, hover animations, breadcrumbs, modals, toasts | ✅ Complete |
-| **Proper Folder Structure** | Logical separation of `assets/css`, `assets/js`, `assets/images`, and root HTML files | ✅ Complete |
+You can open the HTML files directly by double-clicking them, or run a simple static server from the project root.
+
+With Python 3:
+
+```bash
+python -m http.server 8000
+# then open http://localhost:8000/index.html
+```
+
+With Node (http-server):
+
+```bash
+npm install -g http-server
+http-server -c-1
+# then open the shown URL in your browser
+```
 
 ---
 
-## 💻 How to View the Website
-1. Open any of the HTML files directly in your web browser (e.g. double-click `index.html` or open in Chrome / Edge / Firefox).
-2. Alternatively, run a local development server using Python:
-   ```powershell
-   python -m http.server 8000
-   ```
-   and navigate to `http://localhost:8000/index.html`.
+## Notes for maintainers
+
+- Product data is stored in `assets/js/products-data.js`. Edit that file to add, remove or change products.
+- Cart behaviour is implemented in `assets/js/main.js` and persisted to `localStorage` under a project-specific key.
+- Images are in `assets/images/`. Use optimized JPG/WEBP files for best performance.
+
+---
+
+## Contributing
+
+This is a small static demo. If you want to contribute improvements (UI tweaks, accessibility fixes, or new sample products), open a pull request with a clear description of changes.
+
+---
+
+## License
+
+This repository is provided for educational/demo purposes. Add a license file if you want to reuse or publish the code under a specific license.
