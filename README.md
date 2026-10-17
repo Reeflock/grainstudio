@@ -8,6 +8,8 @@ This project was created as a course assignment and also works as a compact demo
 
 ## Live preview
 
+Visit the live website: Grain Studio
+
 Open index.html in a browser or serve the site locally (instructions below). There is no server-side backend — all product data and cart state are handled in the client.
 
 ---
